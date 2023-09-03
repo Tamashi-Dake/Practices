@@ -1,0 +1,77 @@
+:root {
+  --strong-blue: rgb(13, 13, 173);
+  --body-color: beige;
+  --header-color:rgb(222, 194, 194);
+  --font: monospace ;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  font-family: var(--font);
+  font-weight: 900;
+  display: flex;
+  width: 100%;
+  background-color: darkblue;
+  color: var(--header-color);
+  align-items: center;
+  position: fixed;
+  top: 20px;
+  z-index: 1;
+}
+header #left {
+  display: flex;
+  align-items: center;
+}
+header #left img {
+  width: 30px;
+  padding: 0.8rem;
+}
+header #left span {
+  text-transform: uppercase;
+}
+header #right {
+  margin-left: auto;
+  font-size: 0.8rem;
+}
+header #right .nav {
+  list-style-type: none;
+  display: flex;
+}
+header #right .nav li:not(.subList) {
+  padding: 20px;
+}
+header #right .nav li:not(.subList):hover {
+  background-color: aqua;
+  color: aliceblue;
+}
+header #right .dropdownNav:hover li {
+  display: block;
+}
+header #right .dropdownNav > li {
+  display: none;
+}
+
+#quote {
+  background-image: url("https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  position: relative;
+  z-index: 0;
+}
+#quote #hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(255, 255, 255);
+  font-family: var(--font);
+  font-weight: 900;
+  font-size: 30px;
+}/*# sourceMappingURL=index.css.map */
