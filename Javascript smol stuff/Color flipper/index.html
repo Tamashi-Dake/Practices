@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav id="header">
+        <span id="logo">Color Flipper</span>
+        <div id="options">
+            <button onclick="toggleRgbType()" id="mix">RGB</button>
+            <button onclick="toggleHexType()" id="hex">Hex</button>
+        </div>
+    </nav>
+    <div id="body" style="width: 100vw;height: 90vh;background: gray;">
+        <div id="main">
+            <h1>Current color 
+                <span id="color"></span></h1>
+                <button onclick="flipColor()" id="flipBtn">Flip me</button>
+        </div>
+    </div>
+    <script>
+        // lười không muốn dùng <a> nên để 1 biến tổng đổi rgb hoặc hex
+        let toggleType = "rgb"
+        // const toggleColorType = ()=>{
+        //     toggleType=== "rgb"?
+        //     toggleType= "hex"     :  toggleType= "rgb"
+        // }
+        const toggleRgbType = ()=>{
+             toggleType= "rgb"
+             alert("Changed to RGB")
+        }
+        const toggleHexType = ()=>{
+             toggleType= "hex"
+             alert("Changed to Hex")
+
+        }
+        
+        // đổi màu
+        function flipColor(){
+            // Hex hoặc default là RGB
+            switch (toggleType) {
+                case "hex":
+                let colorHex  = getRandomHex();
+                document.getElementById("body").style.background = colorHex
+                document.getElementById("color").innerHTML = colorHex
+                    break;
+                default:
+                let colorRbg  = getRandomRgb();
+                document.getElementById("body").style.background = colorRbg
+                document.getElementById("color").innerHTML = colorRbg
+                console.log(colorRbg)
+                    break;
+            }
+            document.getElementById("logo").style.color = getRandomHex()
+        }
+
+        // Random Hex
+        const getRandomHex=()=>{
+            // tạo 1 string chứa kí tự trong hex
+            const colorChar= "0123456789ABCDEF"
+            // chỗ lưu màu mới
+            let hexColor ='#';
+            for (let i =0; i<6;i++){
+                // ngẫu nhiên 6 kí tự trong string
+                hexColor+=colorChar[Math.floor(Math.random()*16)]
+            }
+            return hexColor
+        }
+
+        // Random rgb
+        const getRandomRgb=()=>{
+            // tạo 1 string chứa kí tự trong hex
+            const randomRgb1 = Math.floor(Math.random()* 255)
+            const randomRgb2 = Math.floor(Math.random()* 255)           
+            const randomRgb3 = Math.floor(Math.random()* 255)           
+
+            // chỗ lưu màu mới
+            const rgbColor = "rgb("+randomRgb1+", "+randomRgb2+", "+randomRgb3+")"
+            return rgbColor
+        }
+
+        // console.log(getRandomHex(arrayChar))
+    </script>
+</body>
+</html>

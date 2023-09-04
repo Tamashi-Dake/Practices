@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+}
+nav{
+    /* background: wheat; */
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items:end;
+    border-bottom: 2px solid gainsboro;
+}
+nav > *{
+    padding:0 30px;
+}
+nav span{
+    font-size: 30px;
+    font-weight: bold;
+    color:aquamarine;
+}
+nav button{
+    background: none;
+    border:2px solid gainsboro;
+    border-bottom: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#main{
+    top: 50%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    /* min-width: 50vw; */
+    /* transform-origin: top left;
+    display: block; */
+}
+#flipBtn{
+    background-color:transparent;
+    color: aliceblue;
+    border-radius: 5px;
+    margin: 10px;
+}
