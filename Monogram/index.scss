@@ -1,16 +1,18 @@
 :root {
   --strong-blue: rgb(13, 13, 173);
   --body-color: beige;
-  --header-color:rgb(222, 194, 194);
-  --font: monospace
+  --header-color: rgb(222, 194, 194);
+  --font: monospace;
 }
-@mixin boldText{
+@mixin boldText {
   font-family: var(--font);
   font-weight: 900;
+  text-align: center;
 }
-*{
+* {
   margin: 0;
   padding: 0;
+  // box-sizing: border-box
 }
 
 header {
@@ -19,86 +21,117 @@ header {
   width: 100%;
   background-color: darkblue;
   color: var(--header-color);
-  align-items: center ;
+  align-items: center;
   position: fixed;
   top: 20px;
   z-index: 1;
-  #left{
+  #left {
     display: flex;
     align-items: center;
     img {
       width: 30px;
       padding: 0.8rem;
     }
-    span{
+    span {
       text-transform: uppercase;
     }
   }
-   
-  #right{
-    margin-left:auto ;
+
+  #right {
+    margin-left: auto;
     font-size: 0.8rem;
     // padding: auto;
-    .nav{
+    .nav {
       list-style-type: none;
       display: flex;
-      li:not(.subList){
-            padding: 20px; 
-        &:hover{
+      li:not(.subList) {
+        padding: 20px;
+        &:hover {
           background-color: aqua;
           color: aliceblue;
         }
       }
-    }  
-    .dropdownNav{
-      &:hover{
-        li{
-          display:block;
+    }
+    .dropdownNav {
+      position: relative;
+      display: inline-block;
+      ul {
+        display: none;
+      }
+    }
+    .dropdownNav {
+      &:hover {
+        ul {
+          position: absolute;
+          display: block;
         }
       }
-    }  
-    .dropdownNav > li { 
-      display: none;
     }
   }
-  
 }
 
 // sections
-#quote{
-    background-image: url("https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    width: 100%; 
-    height: 700px;
-    position: relative;
-    z-index: 0;    
-    #hero-text{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: rgb(255, 255, 255);
-      @include boldText;
-      font-size: 30px;
-    }
+#quote {
+  background: turquoise url("/Monogram/resources/feel\ bad\ man.jpg") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 650px;
+  width: 100%;
+  height: 700px;
+  position: relative;
+  z-index: 0;
+  #hero-text {
+    // color: transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(60, 55, 0);
+    @include boldText;
+    font-size: 30px;
+  }
+}
+
+#scrollBtn{
+  z-index: 1;
+  width: 80%;
+  font-size: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 10px;
+  text-align: center;
+  .scollIcon{
+    /* Đặt màu fill */
+    fill: white;
+    /* Áp dụng các hiệu ứng khác */
+    transition: transform 0.3s;
+ }
+  &:hover{
+    /* Màu sắc và độ mờ của lớp phủ */
+    background-color: rgba(0, 0, 0, 0.1);
+    .scollIcon{
+     transform: scale(2);
+    }  
+  }
 }
 
 
 // #play-icon{
-//   // background-color: linear-gradient(
-
-//   //   rgb(28, 74, 155) 10%,
-//   //   rgb(54, 173, 50) 90%,
-//   // );
-//   background-color: aqua;
+//   background: linear-gradient(
+//     90deg,
+//     rgb(28, 74, 155) 10%,
+    
+//     rgb(54, 173, 50) 99%
+//   );
+//   // background-color: aqua;
 //   width: 10vw;
 //   height: 10vh;
-//   :hover{
+//   &:hover{
 //     animation: Rotate360 1s linear infinite ;
 //   }
-// } 
+// }
 // @keyframes Rotate360 {
 //   0%{
 //     transform: rotate(0deg);

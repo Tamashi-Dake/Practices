@@ -1,8 +1,9 @@
+@charset "UTF-8";
 :root {
   --strong-blue: rgb(13, 13, 173);
   --body-color: beige;
-  --header-color:rgb(222, 194, 194);
-  --font: monospace ;
+  --header-color: rgb(222, 194, 194);
+  --font: monospace;
 }
 
 * {
@@ -13,6 +14,7 @@
 header {
   font-family: var(--font);
   font-weight: 900;
+  text-align: center;
   display: flex;
   width: 100%;
   background-color: darkblue;
@@ -48,18 +50,23 @@ header #right .nav li:not(.subList):hover {
   background-color: aqua;
   color: aliceblue;
 }
-header #right .dropdownNav:hover li {
-  display: block;
+header #right .dropdownNav {
+  position: relative;
+  display: inline-block;
 }
-header #right .dropdownNav > li {
+header #right .dropdownNav ul {
   display: none;
+}
+header #right .dropdownNav:hover ul {
+  position: absolute;
+  display: block;
 }
 
 #quote {
-  background-image: url("https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  background-position: center;
-  background-repeat: no-repeat;
+  background: turquoise url("/Monogram/resources/feel bad man.jpg") no-repeat;
   background-size: cover;
+  width: 100%;
+  height: 650px;
   width: 100%;
   height: 700px;
   position: relative;
@@ -70,8 +77,34 @@ header #right .dropdownNav > li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: rgb(255, 255, 255);
+  color: rgb(60, 55, 0);
   font-family: var(--font);
   font-weight: 900;
+  text-align: center;
   font-size: 30px;
+}
+
+#scrollBtn {
+  z-index: 1;
+  width: 80%;
+  font-size: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 10px;
+  text-align: center;
+}
+#scrollBtn .scollIcon {
+  /* Đặt màu fill */
+  fill: white;
+  /* Áp dụng các hiệu ứng khác */
+  transition: transform 0.3s;
+}
+#scrollBtn:hover {
+  /* Màu sắc và độ mờ của lớp phủ */
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#scrollBtn:hover .scollIcon {
+  transform: scale(2);
 }/*# sourceMappingURL=index.css.map */
