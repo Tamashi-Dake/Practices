@@ -117,6 +117,19 @@ header {
   }
 }
 
+#sales-stuff{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}
+.products{
+  width: 15rem;
+  height: fit-content;
+  background-color: burlywood;
+  margin: auto;
+  gap: 2rem;
+
+}
+
 
 // #play-icon{
 //   background: linear-gradient(

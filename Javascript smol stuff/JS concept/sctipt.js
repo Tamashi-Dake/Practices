@@ -123,4 +123,25 @@ order(2000,()=>console.log(`${stocks.Fruits[0]} was selected`))
 
 // makeCream()
 
-  makeIceCream();
+// makeIceCream();
+
+// re-creating map
+const array = [1,2,3]
+// tạo function mapMimic trong Array.prototype - Nhận vào 1 function callback
+Array.prototype.mapMimic = function(callback){
+  // gán length ngoài -> tăng performent
+  let output =[], arrayLength = this.length, result
+  // lặp qua array
+  for (let i=0;i<arrayLength;i++){
+    // nếu callback có return -> bắt bằng result
+    // callback với mỗi item trong array
+    result = callback(this[i],i)
+    console.log(result)
+  }
+  output.push(result)
+  return  output
+}
+
+array.mapMimic((item)=>{
+  return `${item}`
+})
