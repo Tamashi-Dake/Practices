@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+            <div id="wapper">
+                <h1 id="logo">Some <span>thing</span></h1>
+                <ul id="navMenu">
+                    <li id="navLink">Home</li>
+                    <li id="navLink">About</li>
+                    <li id="navLink">Projects</li>
+                    <li id="navLink">Contact</li>
+                </ul>
+                <span onClick="toggleMenu()" id="menuIcon">X</span>
+            </div>
+           
+    </header>
+    
+    <script>
+        // const menuBtn = document.querySelector("menuIcon")
+        const toggleMenu=()=>{
+            // const menu = document.getElementById("navMenu")
+            // getComputedStyle(menu).display ==="none"?
+            // menu.style.display = "block":menu.style.display = "none"
+            const menu = document.getElementById("navMenu");
+    const menuIcon = document.getElementById("menuIcon");
+
+    menu.classList.toggle("hidden");
+        }
+    </script>
+</body>
+</html>
